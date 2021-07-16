@@ -1,0 +1,27 @@
+version: "3"
+
+services:
+
+  postgres:
+    image: postgres:latest
+    healthcheck:
+      test: [ "CMD", "pg_isready", "-q", "-d", "postgres", "-U", "root" ]
+      timeout: 45s
+      interval: 10s
+      retries: 10
+#    restart: always
+    env_file:
+      - .env
+    ports:
+      - "54321:5432"
+    volumes:
+      - ./data/postgres_data/:/var/lib/postgresql/data/
+
+  pgadmin:
+    image: dpage/pgadmin4:latest
+    env_file:
+      - .env
+    ports:
+      - "8080:80"
+    volumes:
+      - ./data/pgadmin-data/:/var/lib/pgadmin
