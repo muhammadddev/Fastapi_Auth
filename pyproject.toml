@@ -8,14 +8,12 @@ authors = ["muhammadddev <muhammadddev@gmail.com>"]
 python = "^3.9"
 fastapi = "^0.66.0"
 Hypercorn = {extras = ["uvloop"], version = "^0.11.2"}
-uvloop = "^0.15.3"
 python-jose = {extras = ["cryptography"], version = "^3.2.0"}
 passlib = {extras = ["bcrypt"], version = "^1.7.4"}
 SQLAlchemy = "^1.4.17"
 arrow = "^1.1.0"
 environ-config = "^21.2.0"
 email-validator = "^1.1.2"
-psycopg2 = "^2.9.1"
 python-multipart = "^0.0.5"
 alembic = "^1.6.5"
 
